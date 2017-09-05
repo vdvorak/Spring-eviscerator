@@ -9,6 +9,7 @@ public class TerminatorQuoter implements Quoter {
     private int repeat;
 
     private String message;
+
     @PostConstruct
     public void init(){
         System.out.println("Phase_2");
