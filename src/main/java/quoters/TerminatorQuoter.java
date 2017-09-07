@@ -12,12 +12,12 @@ public class TerminatorQuoter implements Quoter {
 
     @PostConstruct
     public void init(){
-        System.out.println("Phase_2");
-        System.out.println(repeat);
+        System.out.println("init method класса TerminatorQuoter");
+        System.out.println("Количество повторов: " + repeat);
     }
 
     public TerminatorQuoter() {
-        System.out.println("Phase_1");
+        System.out.println("Конструктор класса");
     }
 
     public void setMessage(String message) {
@@ -25,7 +25,9 @@ public class TerminatorQuoter implements Quoter {
     }
 
     @Override
+    @PostProxy
     public void sayQuote() {
+        System.out.println("Вызов PostProxy");
         for (int i = 0; i < repeat; i++) {
             System.out.println("message = " + message);
         }
